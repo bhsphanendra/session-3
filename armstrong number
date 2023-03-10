@@ -1,0 +1,32 @@
+#include<stdio.h>
+void isArmstrong(num)
+{
+  int on,re,p,c=0,rs=0;
+  on=num;
+  c=(num==0)?1:log10(num)+1;
+  while(on!=0)
+  {
+      re=on%10;
+      if(c>0)
+      {
+        p=pow(re,c);
+        rs=rs+p;
+        on=on/10;
+      }
+  }
+  if(rs==num)
+  {
+      printf("yes");
+  }
+  else
+  {
+      printf("no");
+  }
+}
+int main()
+{
+    int num;
+    scanf ("%d", &num);
+    isArmstrong(num);
+    return 0;
+}
